@@ -10,7 +10,7 @@ function App() {
         label={open ? "Close Bottom Sheet" : "Open Bottom Sheet"}
         onClick={() => setOpen(!open)}
       />
-      <BottomSheet open={open} title="title">
+      <BottomSheet open={open} onClose={() => setOpen(false)} title="title">
         {/* Penyaluran dana */}
         <div className="flex items-center space-x-2">
           <div className="h-5 w-5 cursor-pointer bg-[#E6F5FB]"></div>
@@ -65,13 +65,6 @@ function App() {
             kondisi dan kebutuhan selama galang dana berlangsung.
           </p>
         </div>
-
-        <button
-          className="bottom-0 w-full max-w-480 bg-sky-500 p-3 text-white"
-          onClick={() => setOpen(!open)}
-        >
-          Close Button
-        </button>
       </BottomSheet>
     </Container>
   );
